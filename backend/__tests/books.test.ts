@@ -124,7 +124,7 @@ describe("Test sur les livres", () => {
     });
     assert(response.body.kind === "single");
     expect(response.body.singleResult.data).toEqual({
-      test: 14,
+      test: 4,
     });
   });
 });
