@@ -4,6 +4,10 @@ on:
   push:
     branches: ["1-mock-livres"]
 
+defaults: # Permet de metre par défault le cd backend 
+  run:
+      working-directory: backend
+
 jobs: 
   test: 
     name: 🛠️test
@@ -15,6 +19,9 @@ jobs:
 
 # install des dépendances 
       - name: 🎈Installation des dépendances
-        run: |
-          cd backend
+        run: #|
+          #cd backend
           npm install
+
+      - name: 💫 Lancement des tests backend
+        run: npm run test:ci
